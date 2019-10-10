@@ -1,4 +1,2 @@
 # Projekcik
-Xd
-Siema
-joł
+
