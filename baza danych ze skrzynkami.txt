@@ -1,0 +1,47 @@
+cd c:/xampp/mysql/bin/
+
+mysql -u root
+
+create database skrzynki;
+
+use skrzynki;
+
+create table skrzynka1(id int auto_increment, nazwa varchar(20), wartosc int(10), primary key(id));
+
+create table skrzynka2(id int auto_increment, nazwa varchar(20), wartosc int(10), primary key(id));
+
+create table skrzynka3(id int auto_increment, nazwa varchar(20), wartosc int(10), primary key(id));
+
+create table skrzynka4(id int auto_increment, nazwa varchar(20), wartosc int(10), primary key(id));
+
+create table skrzynka5(id int auto_increment, nazwa varchar(20), wartosc int(10), primary key(id));
+
+insert into skrzynka1 values(null, "klucz1", "1");
+
+insert into skrzynka1 values(null, "klucz2", "2");
+
+insert into skrzynka1 values(null, "klucz3", "3");
+
+insert into skrzynka2 values(null, "klucz1", "1");
+
+insert into skrzynka2 values(null, "klucz2", "2");
+
+insert into skrzynka2 values(null, "klucz3", "3");
+
+insert into skrzynka3 values(null, "klucz1", "1");
+
+insert into skrzynka3 values(null, "klucz2", "2");
+
+insert into skrzynka3 values(null, "klucz3", "3");
+
+insert into skrzynka4 values(null, "klucz1", "1");
+
+insert into skrzynka4 values(null, "klucz2", "2");
+
+insert into skrzynka4 values(null, "klucz3", "3");
+
+insert into skrzynka5 values(null, "klucz1", "1");
+
+insert into skrzynka5 values(null, "klucz2", "2");
+
+insert into skrzynka5 values(null, "klucz3", "3");
