@@ -11,7 +11,7 @@
 <body>
 <?php
     echo "<p>Zalogowano pomyślnie ".$_SESSION['uzytkownik']."!";
-    echo "<p><b>Stan konta</b>: ".$_SESSION['stan konta'];
+    echo "<p><b>Stan konta</b>: ".$_SESSION['stan konta']."PLN";
 ?>
 </body>
 </html>
