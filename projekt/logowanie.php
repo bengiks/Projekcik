@@ -16,8 +16,7 @@ $sql = "SELECT * FROM uzytkownicy WHERE uzytkownik='$login' AND haslo='$haslo'";
 if($rezultat = $polaczenie->query($sql));
 {
     $ile_uzytkownikow = $rezultat->num_rows;
-    if($ile_uzytkownikow==1)
-    {
+    if($ile_uzytkownikow==1){
         $wiersz = $rezultat->fetch_assoc();
         $_SESSION['uzytkownik'] = $wiersz['uzytkownik'];
         $_SESSION['stan konta'] = $wiersz['stan konta'];
@@ -27,6 +26,5 @@ if($rezultat = $polaczenie->query($sql));
         $_SESSION['blad'] = 'Nieprawidłowe dane logowania!';
         header('Location: projekt.php');
         }
-    
-}
+}  
 ?>

@@ -27,11 +27,11 @@
         <input type="password" placeholder="hasło" name="haslo"/>
         <input type="submit" value="Zaloguj się">
         <p class="message">Nie masz konta? <a href="#">Załóż je!</a></p>
+        <?php
+          if(isset($SESSION['blad']))
+          echo $_SESSION['blad'];
+        ?>
       </form>
-      <?php
-      if(isset($SESSION['blad']))
-      echo $_SESSION['blad'];
-      ?>
     </div>
   </div>
 </body>
