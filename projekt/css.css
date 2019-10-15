@@ -2,7 +2,7 @@
 
 .login-page {
   width: 360px;
-  padding: 30% 0 0;
+  padding: 10% 0 0;
   margin: auto;
 }
 .form {
@@ -40,7 +40,7 @@
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: rgb(124, 159, 255);
 }
 .form .message {
   margin: 15px 0 0;
@@ -89,4 +89,9 @@
 }
 body {
   background: rgb(60, 110, 247);     
+}
+.slogan {
+    display: flex;
+justify-content: center;
+font-size: 64px;
 }
