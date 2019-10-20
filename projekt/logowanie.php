@@ -20,6 +20,7 @@ if($rezultat = $polaczenie->query($sql));
         $wiersz = $rezultat->fetch_assoc();
         $_SESSION['uzytkownik'] = $wiersz['uzytkownik'];
         $_SESSION['stan konta'] = $wiersz['stan konta'];
+        unset($_SESSION['blad']);
         $rezultat->free_result();
         header('Location: podstrona.php');
     } else { 

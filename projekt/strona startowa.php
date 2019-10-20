@@ -21,11 +21,11 @@
     </div>
   <div class="login-page">
     <div class="form">
-      <form class="register-form">
-        <input type="text" placeholder="nazwa użytkownika" />
-        <input type="password" placeholder="hasło" />
-        <input type="text" placeholder="adres email" />
-        <button>Stwórz</button>
+      <form action="rejestracja.php" method="POST">
+        <input type="text" placeholder="nazwa użytkownika" name="login" />
+        <input type="password" placeholder="hasło" name="haslo" />
+        <input type="text" placeholder="adres email" name="email"/>
+        <input type="submit" value="Stwórz konto" />
         <p class="message">Masz już konto? <a href="#">Zaloguj</a></p>
       </form>
       <form action="logowanie.php" method="POST">
