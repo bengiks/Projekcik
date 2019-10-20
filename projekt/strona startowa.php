@@ -34,7 +34,7 @@
         <input type="submit" value="Zaloguj się">
         <p class="message">Nie masz konta? <a href="#" id="zaloz">Załóż je!</a></p>
         <?php
-          if(isset($SESSION['blad']))
+          if(isset($_SESSION['blad']))
           echo $_SESSION['blad'];
         ?>
        </form>

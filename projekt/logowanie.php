@@ -24,7 +24,7 @@ if($rezultat = $polaczenie->query($sql));
         header('Location: podstrona.php');
     } else { 
         $_SESSION['blad'] = 'Nieprawidłowe dane logowania!';
-        header('Location: projekt.php');
+        header('Location: strona startowa.php');
         }
 }  
 ?>
