@@ -57,6 +57,9 @@
         <?php
           if(isset($_SESSION['blad']))
           echo $_SESSION['blad'];
+          
+          if(isset($_SESSION['podziekowanie']))
+          echo $_SESSION['podziekowanie'];
         ?>
        </form>
     </div>
