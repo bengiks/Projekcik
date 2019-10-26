@@ -10,7 +10,7 @@ if(isset($_POST['login'])) && (isset($_POST['haslo'])) && (isset($_POST['email']
     if(strlen($login)<4) || (strlen($login)>16) || $login == "")
     {
         $poprawnosc_danych = false;
-        $_SESSION['error_login']="Login musi mieć od 4 do 16 znaków!";
+        $_SESSION['error_login'] = "Login musi mieć od 4 do 16 znaków!";
     }
     
     $haslo = $_POST['haslo'];
@@ -18,7 +18,7 @@ if(isset($_POST['login'])) && (isset($_POST['haslo'])) && (isset($_POST['email']
     if(strlen($haslo)<8) || (strlen($haslo)>24) || $haslo == "")
     {
         $poprawnosc_danych = false;
-        $_SESSION['error_haslo']="Podane hasło musi mieć od 8 do 24 znaków!";
+        $_SESSION['error_haslo'] = "Podane hasło musi mieć od 8 do 24 znaków!";
     }
      
     $email = $_POST['email'];
@@ -26,7 +26,7 @@ if(isset($_POST['login'])) && (isset($_POST['haslo'])) && (isset($_POST['email']
     if(!filter_var($email, FILTER_VALIDATE_EMAIL) || $email == "")
     {
         $poprawnosc_danych = false;
-        $_SESSION['error_email']="Podany email jest niepoprawny!";
+        $_SESSION['error_email'] = "Podany email jest niepoprawny!";
     }
     
 }
