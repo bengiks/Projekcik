@@ -23,6 +23,13 @@
     <div class="form">
       <form action="rejestracja.php" method="POST">
         <input type="text" placeholder="nazwa użytkownika" name="login" />
+        <?php
+          if(isset($_SESSION['error_login']))
+          {
+            echo $_SESSION['error_login'];
+            unset($_SESSION['error_login']);
+          }
+        ?>  
         <input type="password" placeholder="hasło" name="haslo" />
         <input type="text" placeholder="adres email" name="email"/>
         <input type="submit" value="Stwórz konto" />
