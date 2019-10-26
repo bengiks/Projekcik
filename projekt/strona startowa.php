@@ -31,7 +31,21 @@
           }
         ?>  
         <input type="password" placeholder="hasło" name="haslo" />
+        <?php
+          if(isset($_SESSION['error_haslo']))
+          {
+            echo $_SESSION['error_haslo'];
+            unset($_SESSION['error_haslo']);
+          }
+        ?>  
         <input type="text" placeholder="adres email" name="email"/>
+        <?php
+          if(isset($_SESSION['error_email']))
+          {
+            echo $_SESSION['error_email'];
+            unset($_SESSION['error_email']);
+          }
+        ?>  
         <input type="submit" value="Stwórz konto" />
         <p class="message">Masz już konto? <a href="#">Zaloguj</a></p>
       </form>
