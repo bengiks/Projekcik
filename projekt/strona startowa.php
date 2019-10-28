@@ -21,7 +21,7 @@
     </div>
   <div class="login-page">
     <div class="form">
-      <form action="rejestracja.php" method="POST">
+      <form action="rejestracja.php" method="POST" class="register-form">
         <input type="text" placeholder="nazwa użytkownika" name="login" />
         <?php
           if(isset($_SESSION['error_login']))
@@ -49,10 +49,10 @@
         <input type="submit" value="Stwórz konto" />
         <p class="message">Masz już konto? <a href="#">Zaloguj</a></p>
       </form>
-      <form action="logowanie.php" method="POST">
+      <form action="logowanie.php" method="POST" class="login-form">
         <input type="text" placeholder="nazwa użytkownika" name="login" />
         <input type="password" placeholder="hasło" name="haslo"/>
-        <input type="submit" value="Zaloguj się">
+        <input type="submit" value="Zaloguj się"/>
         <p class="message">Nie masz konta? <a href="#" id="zaloz">Załóż je!</a></p>
         <?php
           if(isset($_SESSION['blad']))
