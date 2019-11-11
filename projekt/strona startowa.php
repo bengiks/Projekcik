@@ -22,7 +22,13 @@
   <div class="login-page">
     <div class="form">
       <form action="rejestracja.php" method="POST" class="register-form">
-        <input type="text" placeholder="nazwa użytkownika" name="login" />
+        <input type="text" placeholder="nazwa użytkownika" name="login" value="<?php
+          if(isset($_SESSION['db_login']))
+          {
+            echo $_SESSION['db_login'];
+            unset($_SESSION['db_login']);
+          }
+        ?>" />
         <?php
           if(isset($_SESSION['error_login']))
           {
@@ -30,7 +36,14 @@
             unset($_SESSION['error_login']);
           }
         ?>  
-        <input type="password" placeholder="hasło" name="haslo" />
+        
+        <input type="password" placeholder="hasło" name="haslo" value="<?php
+          if(isset($_SESSION['db_haslo']))
+          {
+            echo $_SESSION['db_haslo'];
+            unset($_SESSION['db_haslo']);
+          }
+        ?>" />
         <?php
           if(isset($_SESSION['error_haslo']))
           {
@@ -38,7 +51,14 @@
             unset($_SESSION['error_haslo']);
           }
         ?>  
-        <input type="text" placeholder="adres email" name="email"/>
+        
+        <input type="text" placeholder="adres email" name="email" value="<?php
+          if(isset($_SESSION['db_email']))
+          {
+            echo $_SESSION['db_email'];
+            unset($_SESSION['db_email']);
+          }
+        ?>" />
         <?php
           if(isset($_SESSION['error_email']))
           {

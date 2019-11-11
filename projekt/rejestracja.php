@@ -29,6 +29,10 @@ if(isset($_POST['login']))
         $_SESSION['error_email'] = "Podany email jest niepoprawny!";
     }
     
+    $_SESSION['db_login'] = $login;
+	$_SESSION['db_haslo'] = $haslo;
+	$_SESSION['db_email'] = $email;
+    
     $host = "localhost";
     $db_user = "root";
     $db_password = "";
@@ -36,13 +40,13 @@ if(isset($_POST['login']))
 
     $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
     
-    $rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE login='$login'");
+    $rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE uzytkownik='$login'");
 
     $ile_loginow = $rezultat->num_rows;
     if($ile_loginow>0)
     {
         $poprawnosc_danych = false;
-        $_SESSION['error_login']="Login już jest zajęty!";
+        $_SESSION['db_login']= "Login już jest zajęty!";
     }
 
     $rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE email='$email'");
@@ -51,13 +55,13 @@ if(isset($_POST['login']))
     if($ile_emaili>0)
     {
         $poprawnosc_danych = false;
-        $_SESSION['error_email']="Email już jest zajęty!";
+        $_SESSION['db_email']= "Email już jest zajęty!";
     }
 
     if($poprawnosc_danych==true)
     {
         $polaczenie->query("INSERT INTO uzytkownicy VALUES (NULL, '$login', '$haslo', '$email', 25)"))
-        $_SESSION['podziekowanie'] = 'Dziękujemy za założenie konta! Możesz się już zalogować!';
+        $_SESSION['podziekowanie'] = "Dziękujemy za założenie konta! Możesz się już zalogować!";
         header('Location: strona startowa.php');
     }
 }
