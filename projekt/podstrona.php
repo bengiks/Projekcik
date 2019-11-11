@@ -13,6 +13,7 @@
 <div class="stankonta">
 <?php
     echo "<p><b>Stan konta</b>: ".$_SESSION['stan konta']."PLN";
+    echo "<p>Witamy ".$_SESSION['login'].'! [ <a href="wylogowywanie.php">Wyloguj</a> ]</p>';
 ?>
 </div>
 <!-- <script type="application/javascript">
