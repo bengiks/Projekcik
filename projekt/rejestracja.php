@@ -23,7 +23,7 @@ if(isset($_POST['login']))
      
     $email = $_POST['email'];
 
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
         $poprawnosc_danych = false;
         $_SESSION['error_email'] = "Podany email jest niepoprawny!";
@@ -60,7 +60,7 @@ if(isset($_POST['login']))
 
     if($poprawnosc_danych==true)
     {
-        $polaczenie->query("INSERT INTO uzytkownicy VALUES (NULL, '$login', '$haslo', '$email', 25)"))
+        $polaczenie->query("INSERT INTO uzytkownicy VALUES (NULL, '$login', '$haslo', '$email', 25)")
         $_SESSION['podziekowanie'] = "Dziękujemy za założenie konta! Możesz się już zalogować!";
         header('Location: strona startowa.php');
     }
