@@ -13,12 +13,25 @@ if(isset($_POST['login']))
         $_SESSION['error_login'] = "Login musi mieć od 4 do 16 znaków!";
     }
     
+    if(ctype_alnum($login) == false)
+    {
+        $wszystko_OK = false;
+        $_SESSION['error_login'] = "Login może składać się tylko z liter oraz cyfr!";
+    }
+    
     $haslo = $_POST['haslo'];
+    $haslo2 = $_POST['haslo2'];
 
     if((strlen($haslo)<8) || (strlen($haslo)>24))
     {
         $poprawnosc_danych = false;
         $_SESSION['error_haslo'] = "Podane hasło musi mieć od 8 do 24 znaków!";
+    }
+
+    if($haslo != $haslo2)
+    {
+        $wszystko_OK = false;
+        $_SESSION['error_haslo'] = "Podane hasła nie są identyczne!";
     }
      
     $email = $_POST['email'];
@@ -29,9 +42,10 @@ if(isset($_POST['login']))
         $_SESSION['error_email'] = "Podany email jest niepoprawny!";
     }
     
-    $_SESSION['db_login'] = $login;
-	$_SESSION['db_haslo'] = $haslo;
-	$_SESSION['db_email'] = $email;
+    $_SESSION['remember_login'] = $login;
+    $_SESSION['remember_haslo'] = $haslo;
+    $_SESSION['remember_haslo2'] = $haslo2;
+	$_SESSION['remember_email'] = $email;
     
     $host = "localhost";
     $db_user = "root";

@@ -23,10 +23,10 @@
     <div class="form">
       <form action="rejestracja.php" method="POST" class="register-form">
         <input type="text" placeholder="nazwa użytkownika" name="login" value="<?php
-          if(isset($_SESSION['db_login']))
+          if(isset($_SESSION['remember_login']))
           {
-            echo $_SESSION['db_login'];
-            unset($_SESSION['db_login']);
+            echo $_SESSION['remember_login'];
+            unset($_SESSION['remember_login']);
           }
         ?>" />
         <?php
@@ -38,10 +38,18 @@
         ?>  
         
         <input type="password" placeholder="hasło" name="haslo" value="<?php
-          if(isset($_SESSION['db_haslo']))
+          if(isset($_SESSION['remember_haslo']))
           {
-            echo $_SESSION['db_haslo'];
-            unset($_SESSION['db_haslo']);
+            echo $_SESSION['remember_haslo'];
+            unset($_SESSION['remember_haslo']);
+          }
+        ?>" />
+        
+        <input type="password" placeholder="hasło" name="haslo2" value="<?php
+          if(isset($_SESSION['remember_haslo2']))
+          {
+            echo $_SESSION['remember_haslo2'];
+            unset($_SESSION['remember_haslo2']);
           }
         ?>" />
         <?php
@@ -53,10 +61,10 @@
         ?>  
         
         <input type="text" placeholder="adres email" name="email" value="<?php
-          if(isset($_SESSION['db_email']))
+          if(isset($_SESSION['remember_email']))
           {
-            echo $_SESSION['db_email'];
-            unset($_SESSION['db_email']);
+            echo $_SESSION['remember_email'];
+            unset($_SESSION['remember_email']);
           }
         ?>" />
         <?php
@@ -73,7 +81,7 @@
         <input type="text" placeholder="nazwa użytkownika" name="login" />
         <input type="password" placeholder="hasło" name="haslo"/>
         <input type="submit" value="Zaloguj się"/>
-        <p class="message">Nie masz k onta? <a href="#" id="zaloz">Załóż je!</a></p>
+        <p class="message">Nie masz konta?<a href="#" id="zaloz">Załóż je!</a></p>
         <?php
           if(isset($_SESSION['blad']))
           echo $_SESSION['blad'];
