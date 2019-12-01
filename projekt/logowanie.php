@@ -4,7 +4,7 @@ session_start();
 $host = "localhost";
 $db_user = "root";
 $db_password = "";
-$db_name = "bazadanych6";
+$db_name = "bazadanych";
 
 $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 

@@ -50,7 +50,7 @@ if(isset($_POST['login']))
     $host = "localhost";
     $db_user = "root";
     $db_password = "";
-    $db_name = "bazadanych6";
+    $db_name = "bazadanych";
 
     $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
     
@@ -60,7 +60,8 @@ if(isset($_POST['login']))
     if($ile_loginow>0)
     {
         $poprawnosc_danych = false;
-        $_SESSION['error_login']= "Login już jest zajęty!";
+        $_SESSION['error_login'] = "Login już jest zajęty!";
+        header('Location: strona startowa.php');
     }
 
     $rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE email='$email'");
@@ -69,7 +70,8 @@ if(isset($_POST['login']))
     if($ile_emaili>0)
     {
         $poprawnosc_danych = false;
-        $_SESSION['error_email']= "Email już jest zajęty!";
+        $_SESSION['error_email'] = "Email już jest zajęty!";
+        header('Location: strona startowa.php');
     }
 
     if($poprawnosc_danych==true)

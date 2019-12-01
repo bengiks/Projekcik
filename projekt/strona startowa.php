@@ -45,7 +45,7 @@
           }
         ?>" />
         
-        <input type="password" placeholder="hasło" name="haslo2" value="<?php
+        <input type="password" placeholder="powtórz hasło" name="haslo2" value="<?php
           if(isset($_SESSION['remember_haslo2']))
           {
             echo $_SESSION['remember_haslo2'];
