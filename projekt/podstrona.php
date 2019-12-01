@@ -11,14 +11,15 @@
 </head>
 <body>
 <div class="stankonta">
-<?php
-    echo "<p><b>Stan konta</b>: ".$_SESSION['stan konta']."PLN";
-    echo "<p>Witamy ".$_SESSION['login'].'! [ <a href="wylogowywanie.php">Wyloguj</a> ]</p>';
-?>
-</div>
-<!-- <script type="application/javascript">
-    window.alert("<?php echo "Zalogowano pomyślnie ".$_SESSION['uzytkownik']."!"; ?>")
-</script> -->
 
+<?php
+    echo "Stan konta: ".$_SESSION['stan konta']."PLN";
+    
+    echo 'Witamy '.$_SESSION['uzytkownik'].'!';
+    
+    echo '<a href="wylogowywanie.php">Wyloguj</a>';
+?>
+
+</div>
 </body>
 </html>
