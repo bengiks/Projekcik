@@ -22,13 +22,7 @@
   <div class="login-page">
     <div class="form">
       <form action="rejestracja.php" method="POST" class="register-form">
-        <input type="text" placeholder="nazwa użytkownika" name="login" value="<?php
-          if(isset($_SESSION['remember_login']))
-          {
-            echo $_SESSION['remember_login'];
-            unset($_SESSION['remember_login']);
-          }
-        ?>" />
+        <input type="text" placeholder="nazwa użytkownika" name="login"/>
         <?php
           if(isset($_SESSION['error_login']))
           {
@@ -37,21 +31,9 @@
           }
         ?>  
         
-        <input type="password" placeholder="hasło" name="haslo" value="<?php
-          if(isset($_SESSION['remember_haslo']))
-          {
-            echo $_SESSION['remember_haslo'];
-            unset($_SESSION['remember_haslo']);
-          }
-        ?>" />
+        <input type="password" placeholder="hasło" name="haslo"/>
         
-        <input type="password" placeholder="powtórz hasło" name="haslo2" value="<?php
-          if(isset($_SESSION['remember_haslo2']))
-          {
-            echo $_SESSION['remember_haslo2'];
-            unset($_SESSION['remember_haslo2']);
-          }
-        ?>" />
+        <input type="password" placeholder="powtórz hasło" name="haslo2"/>
         <?php
           if(isset($_SESSION['error_haslo']))
           {
@@ -60,13 +42,7 @@
           }
         ?>  
         
-        <input type="text" placeholder="adres email" name="email" value="<?php
-          if(isset($_SESSION['remember_email']))
-          {
-            echo $_SESSION['remember_email'];
-            unset($_SESSION['remember_email']);
-          }
-        ?>" />
+        <input type="text" placeholder="adres email" name="email"/>
         <?php
           if(isset($_SESSION['error_email']))
           {

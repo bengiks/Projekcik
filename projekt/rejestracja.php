@@ -33,7 +33,9 @@ if(isset($_POST['login']))
         $wszystko_OK = false;
         $_SESSION['error_haslo'] = "Podane hasła nie są identyczne!";
     }
-     
+    
+    $haslohash = password_hash($haslo2, PASSWORD_DEFAULT);
+    
     $email = $_POST['email'];
 
     if(!filter_var($email, FILTER_VALIDATE_EMAIL))
@@ -41,11 +43,6 @@ if(isset($_POST['login']))
         $poprawnosc_danych = false;
         $_SESSION['error_email'] = "Podany email jest niepoprawny!";
     }
-    
-    $_SESSION['remember_login'] = $login;
-    $_SESSION['remember_haslo'] = $haslo;
-    $_SESSION['remember_haslo2'] = $haslo2;
-	$_SESSION['remember_email'] = $email;
     
     $host = "localhost";
     $db_user = "root";
