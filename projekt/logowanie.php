@@ -27,12 +27,12 @@ if($rezultat = $polaczenie->query($sql));
             $rezultat->free_result();
             header('Location: podstrona.php');
         }
-    else 
+        else 
         { 
             $_SESSION['blad'] = 'Nieprawidłowe dane logowania!';
             header('Location: strona startowa.php');
         }
-    } else 
+    }else 
         { 
             $_SESSION['blad'] = 'Nieprawidłowe dane logowania!';
             header('Location: strona startowa.php');

@@ -34,8 +34,8 @@ if(isset($_POST['login']))
         $_SESSION['error_haslo'] = "Podane hasła nie są identyczne!";
     }
     
-    $haslohash = password_hash($haslo2, PASSWORD_DEFAULT);
-    
+    $haslo_hash = password_hash($haslo, PASSWORD_DEFAULT);
+
     $email = $_POST['email'];
 
     if(!filter_var($email, FILTER_VALIDATE_EMAIL))
@@ -73,7 +73,7 @@ if(isset($_POST['login']))
 
     if($poprawnosc_danych==true)
     {
-        $polaczenie->query("INSERT INTO uzytkownicy VALUES (NULL, '$login', '$haslo', '$email', 25)");
+        $polaczenie->query("INSERT INTO uzytkownicy VALUES (NULL, '$login', '$haslo_hash', '$email', 25)");
         $_SESSION['podziekowanie'] = "Dziękujemy za założenie konta! Możesz się już zalogować!";
         header('Location: strona startowa.php');
     }
