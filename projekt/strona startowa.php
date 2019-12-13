@@ -73,6 +73,14 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
 <script type="text/javascript" src="skrypt.js"></script>
+<script>
+  <?php
+    if(isset($_SESSION['zarejestrowany']))
+    {
+      echo 'document.getElementById("zaloz").click()';
+    }
+  ?>
+</script>
 </body>
 
 </html>

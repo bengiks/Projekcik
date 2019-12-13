@@ -3,6 +3,7 @@
 
 if(isset($_POST['login']))
 {
+    session_unset();
     $poprawnosc_danych=true;
 
     $login = $_POST['login'];
@@ -58,7 +59,6 @@ if(isset($_POST['login']))
     {
         $poprawnosc_danych = false;
         $_SESSION['error_login'] = "Login już jest zajęty!";
-        header('Location: strona startowa.php');
     }
 
     $rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE email='$email'");
@@ -68,15 +68,19 @@ if(isset($_POST['login']))
     {
         $poprawnosc_danych = false;
         $_SESSION['error_email'] = "Email już jest zajęty!";
-        header('Location: strona startowa.php');
+
     }
 
     if($poprawnosc_danych==true)
     {
         $polaczenie->query("INSERT INTO uzytkownicy VALUES (NULL, '$login', '$haslo_hash', '$email', 25)");
         $_SESSION['podziekowanie'] = "Dziękujemy za założenie konta! Możesz się już zalogować!";
-        header('Location: strona startowa.php');
     }
+    else
+    {
+        $_SESSION['zarejestrowany'] = true;
+    }
+    header('Location: strona startowa.php');
 }
 
 ?>
